@@ -1,20 +1,27 @@
 {% include 'head.html' %}
-
-<h1 id="logo">Faceoff</h1>
-
-<form role="form" action="" name="createChallenge" method="POST">
-	<div class="form-group">
-		<label for="challenge-name">Challenge Name:</label>
-		<input type="text" class="form-control" id="challenge-name">
+<div class="main-wrapper">
+	<div class="welcome">
+		<div class="logo">
+			<h1>face<span>|</span>off</h1>
+		</div>
+		<img src="/static/pictures/emojis.jpg" alt=":)">
+		<p class="motto">ready. set. face off.</p>
 	</div>
 
-	<div class="form-group">
-		<label for="timer">Time:</label>
-		<input type="times" class="form-control" id="timer">
-	</div>
+	<form role="form" class="create-challenge">
+		<div class="form-group">
+			<label for="challenge-name">Challenge Name:</label>
+			<input type="text" class="form-control" id="challenge-name" placeholder="Best duck face">
+		</div>
 
-	<button type="submit" class="btn btn-default">Submit</button>
-</form>
+		<div class="form-group">
+			<label for="timer">Time:</label>
+			<input type="times" class="form-control" id="timer" placeholder="">
+		</div>
+
+		<button type="submit" class="btn btn-default">Submit</button>
+	</form>
+</div>
 
 <script src="/static/js/custom.js"></script>
 

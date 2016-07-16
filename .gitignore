@@ -1,4 +1,10 @@
 # virtual environment
 venv/
+<<<<<<< HEAD
 *.pyc
 *.gz
+=======
+*.gz
+.DS_Store
+app/.DS_Store
+>>>>>>> Implemented styling for first page

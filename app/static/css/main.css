@@ -1,0 +1,62 @@
+body {
+  background-color: #F9F9F8; }
+
+.logo {
+  font-family: "Lucida Grande", sans-serif;
+  text-align: center; }
+  .logo h1 {
+    font-size: 64px; }
+    @media (max-width: 767px) {
+      .logo h1 {
+        font-size: 48px; } }
+  .logo span {
+    padding: 0px 3px 0px 3px; }
+
+.main-wrapper {
+  width: 55%;
+  margin: 0px auto 0px auto;
+  max-width: 430px; }
+  @media (max-width: 767px) {
+    .main-wrapper {
+      width: 70%; } }
+
+.welcome {
+  padding-top: 40px;
+  text-align: center;
+  border-bottom: 1px solid #cccccc; }
+  .welcome img {
+    width: 90%;
+    height: auto; }
+  .welcome .motto {
+    font-family: 'Gloria Hallelujah', cursive;
+    font-size: 25px; }
+    @media (max-width: 767px) {
+      .welcome .motto {
+        font-size: 20px; } }
+
+.create-challenge {
+  padding-top: 25px; }
+  .create-challenge label {
+    font-family: "Lucida Grande", sans-serif;
+    color: #6b6e6e; }
+  .create-challenge input {
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important; }
+  .create-challenge input:focus, .create-challenge .uneditable-input:focus {
+    border-color: #d58cb6 !important;
+    box-shadow: 0 1px 1px transparent inset, 0 0 8px #F9F9F8 !important;
+    outline: 0 none !important;
+    drop-shadow: 0 1px 1px transparent inset, 0 0 8px transparent !important; }
+  .create-challenge button {
+    width: 100%;
+    color: #FAF0F9;
+    background-color: #d58cb6;
+    text-align: center;
+    transition: all .6s;
+    border: 0; }
+  .create-challenge button:hover {
+    background-color: #B5799C;
+    color: #FAF0F9; }
+
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,11 @@
+// Core variables and mixins
+@import "variables";
+@import "mixins";
+
+// Reset for DOM elements, base classes and components
+@import "elements";
+@import "base";
+@import "components/index";
+
+// Pages
+@import "pages/home";

@@ -1,0 +1,24 @@
+//
+// Elements
+// --------------------------------------------------
+
+body {
+  background-color: $COLOR-BACKGROUND-DEFAULT;
+}
+
+.logo {
+	font-family: $DEFAULT-FONT-MAIN;
+	text-align: center;
+
+	h1 {
+		font-size: 64px;
+
+		@media (max-width: 767px) {
+			font-size: 48px;
+		}
+	}
+
+	span {
+		padding: 0px 3px 0px 3px;
+	}
+}
