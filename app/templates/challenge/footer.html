@@ -15,8 +15,12 @@
         </div>
     </div>
     <div class="col-sm-2 col-xs-4">
-        <form name="upload-img" accept="image/*">
-            <input type="submit">
+        <form name="upload-img" enctype="multipart/form-data">
+            <input type="file" name="image" id="image" accept="image/*" />
+            <!-- below should be hidden -->
+            <input name="userName" id="userNameFinal" type="text" />
+            <input name="caption" id="captionFinal" type="text" />
+            <input type="submit" />
         </form>
     </div>
 </footer>
