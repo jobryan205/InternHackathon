@@ -23,7 +23,7 @@ body {
 .welcome {
   padding-top: 40px;
   text-align: center;
-  border-bottom: 1px solid #cccccc; }
+  border-bottom: 1px solid #CCCCCC; }
   .welcome img {
     width: 90%;
     height: auto; }
@@ -43,7 +43,7 @@ body {
     -webkit-box-shadow: none !important;
     -moz-box-shadow: none !important;
     box-shadow: none !important; }
-  .create-challenge input:focus, .create-challenge select:focus, .create-challenge .uneditable-input:focus {
+  .create-challenge input:focus, .create-challenge .uneditable-input:focus, .create-challenge select:focus {
     border-color: #d58cb6 !important;
     box-shadow: 0 1px 1px transparent inset, 0 0 8px #F9F9F8 !important;
     outline: 0 none !important;
@@ -58,5 +58,23 @@ body {
   .create-challenge button:hover {
     background-color: #B5799C;
     color: #FAF0F9; }
+
+.small-logo {
+  margin-top: 20px;
+  border-right: 1px solid #CCCCCC;
+  text-align: center;
+  font-family: "Lucida Grande", sans-serif;
+  padding: 0px; }
+  .small-logo h2 {
+    font-size: 32px; }
+  .small-logo img {
+    width: 80%;
+    margin: 0px auto 0px auto;
+    min-width: 180px; }
+    @media (max-width: 767px) {
+      .small-logo img {
+        width: 50%;
+        border-bottom: 1px solid #CCCCCC;
+        padding: 0px 30px 0px 30px; } }
 
 /*# sourceMappingURL=main.css.map */

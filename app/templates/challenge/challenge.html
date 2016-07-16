@@ -1,20 +1,21 @@
 {% include 'head.html' %}
 <body>
-    <div class="main-wrapper">
+    <div class="challenge-wrapper">
         <div class="row">
-            <div class="col-sm-2">
-                <img class="logo">
-            <div>
-            <div class="share-icons hidden" hidden>
-                <span>share</span>
-                <a href="#"><img src=""></a>
-                <a href="#"><img src=""></a>
-                <a href="#"><img src=""></a>
+            <div class="col-sm-3 small-logo">
+                <h2>face<span>|</span>off</h2>
+                <img src="/static/pictures/emojis.jpg" alt=":)">
+                <div class="share-icons hidden-sm visible-xs" hidden>
+                    <span>share</span>
+                    <a href="#"><img src=""></a>
+                    <a href="#"><img src=""></a>
+                    <a href="#"><img src=""></a>
+                </div>
             </div>
             <div class="col-sm-8">
                 {% include 'challenge/photofeed.html' %}
-            <div>
-            <div class="col-sm-2 col-xs-0"><div>
+            </div>
+            <div class="col-sm-1"></div>
         </div>
         <div class="row">
             {% include 'challenge/footer.html' %}
