@@ -5,6 +5,7 @@ from flask_socketio import SocketIO
 # initialize application object
 app = Flask(__name__, template_folder='templates')
 
+app.config['SECRET_KEY'] = '&\x98\x0f\x0f\x05\x1a\xd2\xbc\xef\xe2\\\x0b\xdcp\x98]\xd8\xdf\x8a|q\xd2(\x88'
 app.config['MONGO_DBNAME'] = 'faceoff'
 app.mongo = PyMongo(app)
 
@@ -19,7 +20,6 @@ from app.views.challenge.views import challenge
 app.register_blueprint(challenge, url_prefix=prefix)
 
 #setup socketio
-app.config['SECRET_KEY'] = '&\x98\x0f\x0f\x05\x1a\xd2\xbc\xef\xe2\\\x0b\xdcp\x98]\xd8\xdf\x8a|q\xd2(\x88'
 socketio = SocketIO(app)
 if __name__ == '__main__':
     socketio.run(app)
@@ -30,11 +30,12 @@ def handle_like(likeToggleRequest):
     if challenge and challenge['submissions'] and challenge['submissions'][likeToggleRequest.submissionKey]:
         newSubmissions = challenge['submissions']
         if likeToggleRequest.toLike:
-            newSubmissions[likeToggleRequest.submissionKey][likeCount] += 1
-            newSubmissions[likeToggleRequest.submissionKey][likeToggleRequest.requesterId] = True
+            newSubmissions[likeToggleRequest.submissionKey]['likes']['likeCount'] += 1
+            newSubmissions[likeToggleRequest.submissionKey]['likes'][likeToggleRequest.requesterId] = True
         else:
-            newSubmissions[likeToggleRequest.submissionKey][likeCount] -= 1;
-            newSubmissions[likeToggleRequest.submissionKey][likeToggleRequest.requesterId] = False
+            newSubmissions[likeToggleRequest.submissionKey]['likes']['likeCount'] -= 1;
+            newSubmissions[likeToggleRequest.submissionKey]['likes'][likeToggleRequest.requesterId] = False
         app.mongo.db.update_one({'challengeId': likeToggleRequest.challengeId}, {'$set': {'submissions': newSubmissions}})
+
     else:
         print("Error liking: " + str(likeToggleRequest))
