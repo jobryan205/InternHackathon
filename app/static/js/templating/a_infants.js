@@ -1,10 +1,16 @@
 
-$('document').ready(function() {
+function updateAllInfants() {
   templates.updaters.challengeUrl();
   templates.updaters.challengeName();
-});
+  clearInterval(globals.countdown);
 
-
+  var totalSeconds = (new Date(globals.model.endTime).getTime() - (new Date().getTime()))/1000;
+  globals.countdown = setInterval(function() {
+    totalSeconds--;
+    templates.updaters.countdowns(totalSeconds);
+  }, 1000);
+}
+updateAllInfants();
 //footer
 templates.updaters.countdowns = function(seconds) {
   var hours = Math.floor(seconds/3600);
@@ -18,12 +24,6 @@ templates.updaters.countdowns = function(seconds) {
 templates.updaters.challengeUrl = function() {
   var url = window.location.href;
   document.getElementById('challengeUrlContainer').innerHTML = url;
-}
-
-
-templates.updaters.challengeName = function() {
-  var challengeName = globals.model.name;
-  document.getElementById('challengeNameHolder').innerHTML = challengeName;
 }
 
 

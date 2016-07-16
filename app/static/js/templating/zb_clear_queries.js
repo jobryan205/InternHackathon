@@ -6,3 +6,5 @@ function clearHolders() {
   $('#' + ids.join(', #')).html('');
 
 };
+
+clearHolders();
