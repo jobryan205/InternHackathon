@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, request
 from app import app
 
 challenge = Blueprint('challenge', __name__)
@@ -9,7 +9,7 @@ def do_challenge(id):
     if request.method == 'GET':
         challenge = app.mongo.db.challenge.find_one({'challengeId': id})
         print challenge
-        return render_template('index.html')
+        return render_template('test.html', challenge=challenge)
 
     if request.method == 'POST':
         # TODO: more error handling?
