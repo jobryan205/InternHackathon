@@ -27,7 +27,7 @@ if __name__ == '__main__':
 @socketio.on('likeToggle')
 def handle_like(likeToggleRequest):
     challenge = app.mongo.db.find_one({'challengeId': likeToggleRequest.challengeId})
-    if challenge and challenge['submissions') and challenge['submissions'][likeToggleRequest.submissionKey]:
+    if challenge and challenge['submissions'] and challenge['submissions'][likeToggleRequest.submissionKey]:
         newSubmissions = challenge['submissions']
         if likeToggleRequest.toLike:
             newSubmissions[likeToggleRequest.submissionKey][likeCount] += 1
@@ -35,5 +35,6 @@ def handle_like(likeToggleRequest):
         else:
             newSubmissions[likeToggleRequest.submissionKey][likeCount] -= 1;
             newSubmissions[likeToggleRequest.submissionKey][likeToggleRequest.requesterId] = False
+        app.mongo.db.update_one({'challengeId': likeToggleRequest.challengeId}, {'$set': {'submissions': newSubmissions}})
     else:
         print("Error liking: " + str(likeToggleRequest))

@@ -2,9 +2,9 @@ $(document).ready(function(){
     $('form[name="createChallenge"]').on('submit', function(e) {
         e.preventDefault();
 
-        var challengeName = e.target["challenge-name"];
-        var startTime = e.target["timer"];
-        url = window.location.pathname
+        var challengeName = e.target["challenge-name"].value;
+        var startTime = e.target["timer"].value;
+        url = window.location.pathname;
         $.post(url,
             {
                 "challengeName": challengeName,

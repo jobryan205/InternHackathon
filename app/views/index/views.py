@@ -40,3 +40,4 @@ def do_index():
             }
         }
         app.mongo.db.challenge.insert(challenge)
+        return hexId
