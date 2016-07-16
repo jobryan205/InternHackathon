@@ -13,8 +13,7 @@ def do_challenge(challengeId):
 
     if request.method == 'GET':
         challenge = app.mongo.db.challenge.find_one({'challengeId': challengeId})
-        #convert time to time from current time, set close time in db
-        return render_template('test.html', challenge=challenge)
+        return render_template('challenge/challenge.html', challenge=challenge)
 
     if request.method == 'POST':
         # TODO: more error handling?
