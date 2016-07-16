@@ -17,30 +17,12 @@ def do_challenge(challengeId):
 
     if request.method == 'POST':
         # TODO: more error handling?
-        name = ''#request.form['name']
-        caption = ''#request.form['caption']
+        name = request.form['name']
+        caption = request.form['caption']
         image = request.files['image']
 
         path = os.getcwd() + '/app/static/pictures/store/' + secure_filename(image.filename)
         image.save(path)
-
-        # If we want to compress images:
-        # im = request.files['image']
-        # image = Image.open(im.seek(0))
-
-        # oldSize = image.size
-        # width = oldSize[0]
-        # height = oldSize[1]
-        # aspectRatio = width / height
-
-        # if width > height and width > 960:
-        #     width = 960
-        #     height = width / aspectRatio
-        #     image = image.resize((width, height), Image.BILINEAR)
-        # elif height > width and height > 960:
-        #     height = 960
-        #     width = height * aspectRatio
-        #     image = image.resize((width, height), Image.BILINEAR)
 
         challenge = app.mongo.db.challenge.find_one({'challengeId': challengeId})
         if challenge:

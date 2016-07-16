@@ -12,6 +12,29 @@ body {
   .logo span {
     padding: 0px 3px 0px 3px; }
 
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: ""; }
+
+.clearfix:after {
+  clear: both; }
+
+.clearfix {
+  *zoom: 1;
+  clear: both; }
+
+.card {
+  padding: 0;
+  border: 2px solid #CCCCCC;
+  border-radius: 10px; }
+
+.submission-details {
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+  padding: 20px auto; }
+
 .main-wrapper {
   width: 55%;
   margin: 0px auto 0px auto;
@@ -43,7 +66,7 @@ body {
     -webkit-box-shadow: none !important;
     -moz-box-shadow: none !important;
     box-shadow: none !important; }
-  .create-challenge input:focus, .create-challenge select:focus, .create-challenge .uneditable-input:focus {
+  .create-challenge input:focus, .create-challenge .uneditable-input:focus, .create-challenge select:focus {
     border-color: #d58cb6 !important;
     box-shadow: 0 1px 1px transparent inset, 0 0 8px #F9F9F8 !important;
     outline: 0 none !important;
