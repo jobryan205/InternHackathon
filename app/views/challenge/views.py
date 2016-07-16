@@ -5,7 +5,7 @@ challenge = Blueprint('challenge', __name__)
 
 @app.route('/challenge/<id>', methods=['GET','POST'])
 def do_challenge(id):
-    
+
     if request.method == 'GET':
         challenge = app.mongo.db.challenge.find_one({'challengeId': id})
         print challenge
@@ -20,4 +20,3 @@ def do_challenge(id):
         except RequestEntityTooLarge:
             print "image too large"
         #TODO: add photo to app build
-

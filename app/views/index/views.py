@@ -34,6 +34,9 @@ def do_index():
         challenge = {
             'challengeId': hexId,
             'name': challengeName,
-            'startTime': startTime 
+            'startTime': startTime,
+            'submissions': {
+                'nextKey': 0
+            }
         }
         app.mongo.db.challenge.insert(challenge)
