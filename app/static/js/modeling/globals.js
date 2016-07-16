@@ -1,0 +1,6 @@
+globals = {
+  model: {}
+};
+templates = {
+  updaters: {}
+};

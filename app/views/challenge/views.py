@@ -13,7 +13,19 @@ def do_challenge(challengeId):
 
     if request.method == 'GET':
         challenge = app.mongo.db.challenge.find_one({'challengeId': challengeId})
-        return render_template('challenge/challenge.html', challenge=challenge)
+        # timer = request.form['timer']
+        # if challenge and challenge['endTime'] == dateTime.min:
+        #     challenge['endTime'] = datetime.datetime.now() + timer
+        #     #ISO date object
+        # app.mongo.db.challenge.update_one({'challengeId': challengeId}, {'$set': {'endTime': challenge['endTime']}})
+
+
+        if request.cookies.get('userID'):
+            return render_template('challenge/challenge.html', challenge=challenge)
+        else:
+            resp = make_response(render_template('challenge/challenge.html', challenge=challenge))
+            resp.set_cookie('userID', bytes(uuid.uuid4()))
+            return resp
 
     if request.method == 'POST':
         # TODO: more error handling?
