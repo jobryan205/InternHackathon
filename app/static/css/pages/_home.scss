@@ -36,13 +36,13 @@
 		color: #6b6e6e;
 	}
 
-	input {
+	input, select {
 		-webkit-box-shadow: none !important;
 		-moz-box-shadow: none !important;
 		box-shadow: none !important;
 	}
 
-	input:focus, .uneditable-input:focus {   
+	input:focus, .uneditable-input:focus, select:focus {
     	border-color: $COLOR_BUTTON !important;
     	box-shadow: 0 1px 1px transparent inset, 0 0 8px $COLOR-BACKGROUND-DEFAULT !important;
     	outline: 0 none !important;
@@ -63,4 +63,3 @@
 		color: $COLOR-BUTTON-FONT;
 	}
 }
-
