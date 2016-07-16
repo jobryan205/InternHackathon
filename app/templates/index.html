@@ -1,6 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head></head>
-<body>
-    <h1>Hello World</h1>
-</body>
+{% include 'head.html' %}
+
+<h1 id="logo">Faceoff</h1>
+
+<form role="form">
+	<div class="form-group">
+		<label for="challenge-name">Challenge Name:</label>
+		<input type="text" class="form-control" id="challenge-name">
+	</div>
+
+	<div class="form-group">
+		<label for="timer">Time:</label>
+		<input type="times" class="form-control" id="timer">
+	</div>
+
+	<button type="submit" class="btn btn-default">Submit</button>
+</form>
+
+{% include 'footer.html' %}
