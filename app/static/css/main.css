@@ -12,6 +12,29 @@ body {
   .logo span {
     padding: 0px 3px 0px 3px; }
 
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: ""; }
+
+.clearfix:after {
+  clear: both; }
+
+.clearfix {
+  *zoom: 1;
+  clear: both; }
+
+.card {
+  padding: 0;
+  border: 2px solid #CCCCCC;
+  border-radius: 10px; }
+
+.submission-details {
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+  padding: 20px auto; }
+
 .main-wrapper {
   width: 55%;
   margin: 0px auto 0px auto;
