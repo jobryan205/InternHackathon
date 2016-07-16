@@ -1,6 +1,7 @@
-from flask import Blueprint, render_template, request, redirect, url_for
+from flask import *
 from app import app
 import random
+import uuid
 
 index = Blueprint('index', __name__)
 
@@ -21,7 +22,12 @@ def generateHex():
 def do_index():
 
     if request.method == 'GET':
-        return render_template('index/index.html')
+        if request.cookies.get('userID'):
+            return render_template('index/index.html')
+        else:
+            resp = make_response(render_template('index/index.html'))
+            resp.set_cookie('userID', bytes(uuid.uuid4()))
+            return resp
 
     if request.method == 'POST':
         hexId = generateHex()
@@ -29,12 +35,13 @@ def do_index():
             hexId = generateHex()
 
         challengeName = request.form['challengeName']
-        startTime = request.form['startTime']
+        #timer = request.form['timer']
 
         challenge = {
             'challengeId': hexId,
             'name': challengeName,
-            'startTime': startTime,
+            #'timer': timer,
+            #'endTime': dateTime.min,
             'submissions': {
                 'nextKey': 0
             }
