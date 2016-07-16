@@ -1,6 +1,6 @@
 from flask import *
 from flask_pymongo import PyMongo
-from flask_socketio import SocketIO, join_room, leave_room
+from flask_socketio import *
 
 # initialize application object
 app = Flask(__name__, template_folder='templates')
@@ -36,15 +36,26 @@ def handle_like(likeToggleRequest):
             newSubmissions[likeToggleRequest.submissionKey]['likes']['likeCount'] -= 1;
             newSubmissions[likeToggleRequest.submissionKey]['likes'][likeToggleRequest.requesterId] = False
         app.mongo.db.challenge.update_one({'challengeId': likeToggleRequest.challengeId}, {'$set': {'submissions': newSubmissions}})
-        emit('updateLikues', newSubmissions, room=likeToggleRequest.challengeId)
+        emit('updateLikes', newSubmissions, room=likeToggleRequest.challengeId)
 
     else:
         print("Error liking: " + str(likeToggleRequest))
 
+@app.socketio.on('sendInitialChallengeData')
+def handle_initial_data(data):
+    challenge = app.mongo.db.find_one({'challengeId': data['challengeId']})
+    emit('sendInitialChallengeData', challenge, room=challengeId)
+
 @app.socketio.on('join')
-def on_join(challengeId):
-    join_room(challengeId)
+def on_join(data):
+    print "USER JOINED!!!!!"
+    print data
+    join_room(data['connectionId'])
+    send('')
 
 @app.socketio.on('leave')
-def on_leave(challengeId):
-    leave_room(challengeId)
+def on_leave(data):
+    print "USER LEFT!!!!!"
+    leave_room(data['connectionId'])
+    send('')
+    
