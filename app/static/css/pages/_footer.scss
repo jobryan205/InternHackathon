@@ -1,0 +1,57 @@
+.anchor-row {
+	font-family: $DEFAULT-FONT-MAIN;
+
+	background-color: #e9e8e8 !important;
+	color: #657171;
+	overflow:auto;
+
+	.foot-name {
+		background-color: #fff;
+		padding: 0px;
+		margin: 0px;
+		overflow:auto;
+
+		.title {
+			border-right: 1px solid $COLOR-GRAY;
+
+			@media (max-width: 767px) {
+				border-right: 0px solid $COLOR-GRAY;
+				border-bottom: 1px solid $COLOR-GRAY;
+			}	
+		}
+
+		.url {
+			border-top: 1px solid $COLOR-GRAY;
+		}		
+	}
+
+	.foot-upload {
+		overflow: hidden;
+		padding: 0px;
+		height: 100%;
+
+		.hidden-elt {
+			display: none;
+		}
+
+		button {
+			height: 100%;
+			width: 100%;
+			z-index: 10;
+			position: absolute;
+		}
+
+		#image {
+  			position: relative;
+		}
+
+		.glyphicon {
+			color: #595959;
+		}
+	}
+
+	@media (max-width: 767px) {
+		padding-bottom: 40px;
+	}
+
+}

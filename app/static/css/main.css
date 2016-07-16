@@ -24,6 +24,12 @@ body {
   *zoom: 1;
   clear: both; }
 
+.left {
+  float: left; }
+
+.right {
+  float: right; }
+
 .card {
   padding: 0;
   border: 2px solid #CCCCCC;
@@ -82,22 +88,68 @@ body {
     background-color: #B5799C;
     color: #FAF0F9; }
 
+.challenge-wrapper .row {
+  height: auto; }
+
 .small-logo {
-  margin-top: 20px;
+  padding: 20px 0px 0px 0px;
   border-right: 1px solid #CCCCCC;
   text-align: center;
-  font-family: "Lucida Grande", sans-serif;
-  padding: 0px; }
+  font-family: "Lucida Grande", sans-serif; }
   .small-logo h2 {
-    font-size: 32px; }
+    font-size: 32px;
+    color: #363d3d; }
   .small-logo img {
     width: 80%;
     margin: 0px auto 0px auto;
     min-width: 180px; }
     @media (max-width: 767px) {
       .small-logo img {
-        width: 50%;
+        width: 100%;
         border-bottom: 1px solid #CCCCCC;
         padding: 0px 30px 0px 30px; } }
+
+.feed {
+  background-color: #f7f3f3;
+  border-right: 1px solid #CCCCCC;
+  height: 100%;
+  padding: 0px; }
+
+.anchor-row {
+  font-family: "Lucida Grande", sans-serif;
+  background-color: #e9e8e8 !important;
+  color: #657171;
+  overflow: auto; }
+  .anchor-row .foot-name {
+    background-color: #fff;
+    padding: 0px;
+    margin: 0px;
+    overflow: auto; }
+    .anchor-row .foot-name .title {
+      border-right: 1px solid #CCCCCC; }
+      @media (max-width: 767px) {
+        .anchor-row .foot-name .title {
+          border-right: 0px solid #CCCCCC;
+          border-bottom: 1px solid #CCCCCC; } }
+    .anchor-row .foot-name .url {
+      border-top: 1px solid #CCCCCC; }
+  .anchor-row .foot-upload {
+    overflow: hidden;
+    padding: 0px;
+    height: 100%; }
+    .anchor-row .foot-upload .hidden-elt {
+      display: none; }
+    .anchor-row .foot-upload button {
+      height: 100%;
+      width: 100%;
+      z-index: 10;
+      position: absolute; }
+    .anchor-row .foot-upload #image {
+      position: relative; }
+    .anchor-row .foot-upload .glyphicon {
+      color: #595959; }
+  @media (max-width: 767px) {
+    .anchor-row {
+      padding-bottom: 40px; } }
 
 /*# sourceMappingURL=main.css.map */
