@@ -20,7 +20,7 @@ function methods() {
     likes: {
       addLike: function(data, cb) {
         var challenge = globals.model;
-        if (challenge and challenge['submissions'] && challenge['submissions'][data.submissionKey]) {
+        if (challenge && challenge['submissions'] && challenge['submissions'][data.submissionKey]) {
           var newSubmissions = challenge['submissions'];
           newSubmissions[data.submissionKey]['likes']['likeCount'] += 1;
           newSubmissions[data.submissionKey]['likes'][data.requesterId] = true;
@@ -33,7 +33,7 @@ function methods() {
       },
       removeLike: function(data, cb) {
         var challenge = globals.model;
-        if (challenge and challenge['submissions'] && challenge['submissions'][data.submissionKey]) {
+        if (challenge && challenge['submissions'] && challenge['submissions'][data.submissionKey]) {
           var newSubmissions = challenge['submissions'];
           newSubmissions[data.submissionKey]['likes']['likeCount'] -= 1;
           newSubmissions[data.submissionKey]['likes'][data.requesterId] = false;

@@ -10,7 +10,6 @@ function updateAllInfants() {
     templates.updaters.countdowns(totalSeconds);
   }, 1000);
 }
-updateAllInfants();
 //footer
 templates.updaters.countdowns = function(seconds) {
   var hours = Math.floor(seconds/3600);
@@ -35,3 +34,5 @@ templates.updaters.challengeName = function() {
 templates.updaters.postPreviewImageUrl = function(url) {
   document.getElementById('canvasUploadPreviewImage').url = url;
 }
+
+updateAllInfants();

@@ -26,7 +26,8 @@ if __name__ == '__main__':
 
 @app.socketio.on('likeToggle')
 def handle_like(likeToggleRequest):
-    challenge = app.mongo.db.find_one({'challengeId': likeToggleRequest.challengeId})
+    challenge = app.mongo.db.challenge.find_one({'challengeId': likeToggleRequest.challengeId})
+    print challenge
     if challenge and challenge['submissions'] and challenge['submissions'][likeToggleRequest.submissionKey]:
         newSubmissions = challenge['submissions']
         if likeToggleRequest.toLike:
@@ -43,8 +44,8 @@ def handle_like(likeToggleRequest):
 
 @app.socketio.on('sendInitialChallengeData')
 def handle_initial_data(data):
-    challenge = app.mongo.db.find_one({'challengeId': data['challengeId']})
-    emit('sendInitialChallengeData', challenge, room=challengeId)
+    challenge = app.mongo.db.challenge.find_one({'challengeId': data['challengeId']})
+    emit('sendInitialChallengeData', challenge, room=data['challengeId'])
 
 @app.socketio.on('join')
 def on_join(data):
@@ -58,4 +59,3 @@ def on_leave(data):
     print "USER LEFT!!!!!"
     leave_room(data['connectionId'])
     send('')
-    

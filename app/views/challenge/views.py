@@ -1,7 +1,8 @@
-from flask import Blueprint, render_template, request
+from flask import Blueprint, render_template, request, make_response
 from werkzeug.utils import secure_filename
 from flask_pymongo import PyMongo
 from app import app
+import uuid
 import os
 #import PIL
 #from PIL import Image
@@ -52,4 +53,3 @@ def do_challenge(challengeId):
             app.socketio.emit('uploadPhoto', challenge['submissions'], room=challengeId)
             #Maybe return something else
             return ''
-
