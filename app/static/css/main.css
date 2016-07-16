@@ -39,11 +39,11 @@ body {
   .create-challenge label {
     font-family: "Lucida Grande", sans-serif;
     color: #6b6e6e; }
-  .create-challenge input {
+  .create-challenge input, .create-challenge select {
     -webkit-box-shadow: none !important;
     -moz-box-shadow: none !important;
     box-shadow: none !important; }
-  .create-challenge input:focus, .create-challenge .uneditable-input:focus {
+  .create-challenge input:focus, .create-challenge select:focus, .create-challenge .uneditable-input:focus {
     border-color: #d58cb6 !important;
     box-shadow: 0 1px 1px transparent inset, 0 0 8px #F9F9F8 !important;
     outline: 0 none !important;
