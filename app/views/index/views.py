@@ -40,4 +40,4 @@ def do_index():
             }
         }
         app.mongo.db.challenge.insert(challenge)
-        return (url_for('do_challenge', id=hexId))
+        return (url_for('do_challenge', challengeId=hexId))

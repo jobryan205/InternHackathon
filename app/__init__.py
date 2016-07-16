@@ -1,6 +1,6 @@
 from flask import *
 from flask_pymongo import PyMongo
-from flask_socketio import SocketIO
+from flask_socketio import SocketIO, join_room, leave_room
 
 # initialize application object
 app = Flask(__name__, template_folder='templates')
@@ -20,11 +20,11 @@ from app.views.challenge.views import challenge
 app.register_blueprint(challenge, url_prefix=prefix)
 
 #setup socketio
-socketio = SocketIO(app)
+app.socketio = SocketIO(app)
 if __name__ == '__main__':
-    socketio.run(app)
+    app.socketio.run(app)
 
-@socketio.on('likeToggle')
+@app.socketio.on('likeToggle')
 def handle_like(likeToggleRequest):
     challenge = app.mongo.db.find_one({'challengeId': likeToggleRequest.challengeId})
     if challenge and challenge['submissions'] and challenge['submissions'][likeToggleRequest.submissionKey]:
@@ -35,7 +35,16 @@ def handle_like(likeToggleRequest):
         else:
             newSubmissions[likeToggleRequest.submissionKey]['likes']['likeCount'] -= 1;
             newSubmissions[likeToggleRequest.submissionKey]['likes'][likeToggleRequest.requesterId] = False
-        app.mongo.db.update_one({'challengeId': likeToggleRequest.challengeId}, {'$set': {'submissions': newSubmissions}})
+        app.mongo.db.challenge.update_one({'challengeId': likeToggleRequest.challengeId}, {'$set': {'submissions': newSubmissions}})
+        emit('updateLikues', newSubmissions, room=likeToggleRequest.challengeId)
 
     else:
         print("Error liking: " + str(likeToggleRequest))
+
+@app.socketio.on('join')
+def on_join(challengeId):
+    join_room(challengeId)
+
+@app.socketio.on('leave')
+def on_leave(challengeId):
+    leave_room(challengeId)
