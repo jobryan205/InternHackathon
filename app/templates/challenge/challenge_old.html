@@ -1,0 +1,42 @@
+{% include 'head.html' %}
+
+<div id="top-banner">
+	<h1 id="logo">Faceoff</h1>
+	<div>Timer: 1hr</div>
+</div>
+
+<!-- if timer up, winner diplayed -->
+<!-- {% if times-up %}
+	<div id="winner">{{ winning-name }} Won!</div>
+{% endif %} -->
+
+<div id="feed">
+	<!-- {% for entry in submissions %} -->
+	<div class="container">
+		<div class="name col-sm-2 col-xs-7">Jeannie<!-- {{ entry.name }}--></div>
+
+		<div class="photo col sm-8"><img src="" alt=""></div>
+		<!-- <div class="photo col sm-8"><img src={{ entry.src }} alt=""></div>-->
+
+		<div class="likes col-sm-2 col-xs-5">
+			<button type="button" class="btn btn-default">Likes</button>
+			<div class="num-likes">1738</div>
+			<div class="num-likes"><!-- {{ entry.likes }} --></div>
+		</div>
+	</div>
+	<!-- {% endfor %} -->
+</div>
+
+{% include 'modal.html' %}
+
+<div id="bottom-banner">
+	<div id="url">Share: </div>
+	<!-- {% if not times-up %} -->
+	<button type="submit" class="btn btn-default">Upload</button>
+	<!-- {% else %} -->
+	<button type="submit" class="btn btn-default">New Challenge</button>
+	<!-- {% endif %} -->
+</div>
+
+
+{% include 'footer.html' %}

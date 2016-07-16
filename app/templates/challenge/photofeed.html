@@ -1,5 +1,5 @@
 <section id="photofeed">
-    {% for submission in submissions %}
-        {{ include 'submission.html' }}
+    {% for submission in challenge.submissions %}
+        {% include 'challenge/submission.html' %}
     {% endfor %}
 </section>

@@ -1,36 +1,37 @@
 {% include 'head.html' %}
-<div class="main-wrapper">
-	<div class="welcome">
-		<div class="logo">
-			<h1>face<span>|</span>off</h1>
+<body>
+	<div class="main-wrapper">
+		<div class="welcome">
+			<div class="logo">
+				<h1>face<span>|</span>off</h1>
+			</div>
+			<img src="/static/pictures/emojis.jpg" alt=":)">
+			<p class="motto">ready. set. face off.</p>
 		</div>
-		<img src="/static/pictures/emojis.jpg" alt=":)">
-		<p class="motto">ready. set. face off.</p>
+
+		<form role="form" name="createChallenge" class="create-challenge">
+			<div class="form-group">
+				<label for="challenge-name">Challenge Name:</label>
+				<input type="text" class="form-control" id="challenge-name" placeholder="Best duck face">
+			</div>
+
+			<div class="form-group">
+				<label for="timer">Time:</label>
+				<select name="times" class="form-control" id="timer">
+					<option value=".25">15 minutes</option>
+					<option value=".5">30 minutes</option>
+					<option value="1">1 hour</option>
+					<option value="2">2 hours</option>
+					<option value="5">5 hours</option>
+					<option value="12">12 hours</option>
+					<option value="24">24 hours</option>
+				</select>
+			</div>
+
+			<button type="submit" class="btn btn-default">Submit</button>
+		</form>
 	</div>
 
-	<form role="form" name="createChallenge" class="create-challenge">
-		<div class="form-group">
-			<label for="challenge-name">Challenge Name:</label>
-			<input type="text" class="form-control" id="challenge-name" placeholder="Best duck face">
-		</div>
-
-		<div class="form-group">
-			<label for="timer">Time:</label>
-			<select name="times" class="form-control" id="timer">
-				<option value=".25">15 minutes</option>
-				<option value=".5">30 minutes</option>
-				<option value="1">1 hour</option>
-				<option value="2">2 hours</option>
-				<option value="5">5 hours</option>
-				<option value="12">12 hours</option>
-				<option value="24">24 hours</option>
-			</select>
-		</div>
-
-		<button type="submit" class="btn btn-default">Submit</button>
-	</form>
-</div>
-
-<script src="/static/js/custom.js"></script>
-
+	<script src="/static/js/custom.js"></script>
+</body>
 {% include 'footer.html' %}

@@ -9,7 +9,7 @@ def do_challenge(id):
     if request.method == 'GET':
         challenge = app.mongo.db.challenge.find_one({'challengeId': id})
         print challenge
-        return render_template('challenge/test.html', challenge=challenge)
+        return render_template('challenge/challenge.html', challenge=challenge)
 
     if request.method == 'POST':
         # TODO: more error handling?
