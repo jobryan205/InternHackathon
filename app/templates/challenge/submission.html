@@ -1,13 +1,13 @@
 <div class="submission clearfix">
     <div class="card">
-        <img src="{{ submission.imageUrl }}">
+        <img id="submissionImageUrl" />
         <div class="submission-details">
             <p>
-                <b>{{ submission.name }}</b> {{ submission.caption }}
+              <b id="submissionName"> submission.name </b> <span id="submissionCaption"> submission.caption </span>
             </p>
-        </div> 
+        </div>
     </div>
-    <div class="like-container">
-        <button class="like"></button>
+    <div class="like-container button-is-liked">
+        <button class="like" id="likeButton"></button>
     </div>
 </div>
