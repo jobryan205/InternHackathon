@@ -1,16 +1,17 @@
-/*
-Error: Invalid CSS after "...c3060b101d9d5fb": expected "{", was "}"
-        on line 29 of app/static/css/pages/_challenge.scss
-        from line 12 of app/static/css/main.scss
+body {
+  background-color: #F9F9F8; }
 
-24: 			padding: 0px 30px 0px 30px;
-25: 		}
-26: 	}
-27: 
-28: >>>>>>> f1ab4203328b35e12983bb4c4c3060b101d9d5fb
-29: }
+.logo {
+  font-family: "Lucida Grande", sans-serif;
+  text-align: center; }
+  .logo h1 {
+    font-size: 64px; }
+    @media (max-width: 767px) {
+      .logo h1 {
+        font-size: 48px; } }
+  .logo span {
+    padding: 0px 3px 0px 3px; }
 
-<<<<<<< HEAD
 .clearfix:before,
 .clearfix:after {
   display: table;
@@ -31,14 +32,45 @@ Error: Invalid CSS after "...c3060b101d9d5fb": expected "{", was "}"
 
 .card {
   padding: 0;
-  border: 2px solid #CCCCCC;
-  border-radius: 10px; }
+  border: 1px solid #CCCCCC;
+  border-radius: 5px;
+  width: 500px;
+  height: 350px;
+  position: relative;
+  box-shadow: 1px 1px 8px #CCCCCC;
+  margin-left: 150px; }
+  .card:hover {
+    box-shadow: 2px 2px 10px #CCCCCC; }
+  .card img {
+    min-width: 100%;
+    height: 310px; }
 
 .submission-details {
   position: absolute;
+  height: 40px;
+  width: 100%;
   bottom: 0;
-  margin: 0;
-  padding: 20px auto; }
+  border-top: 1px solid #CCCCCC;
+  color: gray;
+  background-color: white; }
+  .submission-details p {
+    margin: 0 0 0 30px;
+    padding: 20px auto;
+    line-height: 40px; }
+
+.like-container {
+  width: 200px;
+  height: 350px; }
+  .like-container .btn {
+    background-color: transparent;
+    border: none; }
+  .like-container i {
+    line-height: 350px;
+    font-size: 40px; }
+  .like-container .fa-heart {
+    color: #ff6666; }
+  .like-container .fa-heart-o {
+    color: #CCCCCC; }
 
 .main-wrapper {
   width: 55%;
@@ -51,7 +83,7 @@ Error: Invalid CSS after "...c3060b101d9d5fb": expected "{", was "}"
 .welcome {
   padding-top: 40px;
   text-align: center;
-  border-bottom: 1px solid #CCCCCC; }
+  border-bottom: 1px solid gray; }
   .welcome img {
     width: 90%;
     height: auto; }
@@ -90,9 +122,12 @@ Error: Invalid CSS after "...c3060b101d9d5fb": expected "{", was "}"
 .challenge-wrapper .row {
   height: auto; }
 
+#photofeed {
+  margin-top: 40px; }
+
 .small-logo {
   padding: 20px 0px 0px 0px;
-  border-right: 1px solid #CCCCCC;
+  border-right: 1px solid gray;
   text-align: center;
   font-family: "Lucida Grande", sans-serif; }
   .small-logo h2 {
@@ -105,33 +140,40 @@ Error: Invalid CSS after "...c3060b101d9d5fb": expected "{", was "}"
     @media (max-width: 767px) {
       .small-logo img {
         width: 100%;
-        border-bottom: 1px solid #CCCCCC;
+        border-bottom: 1px solid gray;
         padding: 0px 30px 0px 30px; } }
 
 .feed {
   background-color: #f7f3f3;
-  border-right: 1px solid #CCCCCC;
+  border-right: 1px solid gray;
   height: 100%;
   padding: 0px; }
 
 .anchor-row {
   font-family: "Lucida Grande", sans-serif;
+  height: 60px;
   background-color: #e9e8e8 !important;
   color: #657171;
   overflow: auto; }
+  @media (max-width: 767px) {
+    .anchor-row {
+      height: 142px; } }
   .anchor-row .foot-name {
+    border-top: 1px solid gray;
     background-color: #fff;
     padding: 0px;
     margin: 0px;
     overflow: auto; }
     .anchor-row .foot-name .title {
-      border-right: 1px solid #CCCCCC; }
+      padding: 4px;
+      border-right: 1px solid gray; }
       @media (max-width: 767px) {
         .anchor-row .foot-name .title {
-          border-right: 0px solid #CCCCCC;
-          border-bottom: 1px solid #CCCCCC; } }
+          border-right: 0px solid gray;
+          border-bottom: 1px solid gray; } }
     .anchor-row .foot-name .url {
-      border-top: 1px solid #CCCCCC; }
+      padding: 4px;
+      border-top: 1px solid gray; }
   .anchor-row .foot-upload {
     overflow: hidden;
     padding: 0px;
@@ -152,65 +194,3 @@ Error: Invalid CSS after "...c3060b101d9d5fb": expected "{", was "}"
       padding-bottom: 40px; } }
 
 /*# sourceMappingURL=main.css.map */
-
-Backtrace:
-app/static/css/pages/_challenge.scss:29
-app/static/css/main.scss:12
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:1179:in `expected'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:1115:in `expected'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:1110:in `tok!'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:654:in `block'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:724:in `declaration_or_ruleset'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:674:in `block_child'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:666:in `block_contents'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:655:in `block'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:724:in `declaration_or_ruleset'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:674:in `block_child'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:666:in `block_contents'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:655:in `block'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:647:in `ruleset'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:673:in `block_child'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:663:in `block_contents'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:123:in `stylesheet'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:39:in `parse'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.21/lib/sass/engine.rb:403:in `_to_tree'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.21/lib/sass/engine.rb:309:in `to_tree'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:324:in `block in visit_import'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.21/lib/sass/stack.rb:88:in `block in with_import'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.21/lib/sass/stack.rb:115:in `with_frame'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.21/lib/sass/stack.rb:88:in `with_import'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:323:in `visit_import'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.21/lib/sass/tree/visitors/base.rb:36:in `visit'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.21/lib/sass/stack.rb:79:in `block in with_base'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.21/lib/sass/stack.rb:115:in `with_frame'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.21/lib/sass/stack.rb:79:in `with_base'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:158:in `visit'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.21/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.21/lib/sass/tree/visitors/base.rb:52:in `map'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.21/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.21/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.21/lib/sass/tree/visitors/base.rb:36:in `visit'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:157:in `visit'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:8:in `visit'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.21/lib/sass/tree/root_node.rb:36:in `css_tree'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.21/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.21/lib/sass/engine.rb:378:in `_render_with_sourcemap'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.21/lib/sass/engine.rb:295:in `render_with_sourcemap'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.21/lib/sass/exec/sass_scss.rb:414:in `run'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.21/lib/sass/exec/sass_scss.rb:63:in `process_result'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.21/lib/sass/exec/base.rb:52:in `parse'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.21/lib/sass/exec/base.rb:19:in `parse!'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.21/bin/scss:13:in `<top (required)>'
-/usr/local/bin/scss:23:in `load'
-/usr/local/bin/scss:23:in `<main>'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: Invalid CSS after \"...c3060b101d9d5fb\": expected \"{\", was \"}\"\A         on line 29 of app/static/css/pages/_challenge.scss\A         from line 12 of app/static/css/main.scss\A \A 24: 			padding: 0px 30px 0px 30px;\A 25: 		}\A 26: 	}\A 27: \A 28: >>>>>>> f1ab4203328b35e12983bb4c4c3060b101d9d5fb\A 29: }"; }
-

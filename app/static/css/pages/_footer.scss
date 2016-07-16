@@ -1,17 +1,24 @@
 .anchor-row {
 	font-family: $DEFAULT-FONT-MAIN;
+	height: 60px;
+
+	@media (max-width: 767px) {
+			height: 142px;
+		}	
 
 	background-color: #e9e8e8 !important;
 	color: #657171;
 	overflow:auto;
 
 	.foot-name {
+		border-top: 1px solid $COLOR-GRAY;
 		background-color: #fff;
 		padding: 0px;
 		margin: 0px;
 		overflow:auto;
 
 		.title {
+			padding: 4px;
 			border-right: 1px solid $COLOR-GRAY;
 
 			@media (max-width: 767px) {
@@ -21,6 +28,7 @@
 		}
 
 		.url {
+			padding: 4px;
 			border-top: 1px solid $COLOR-GRAY;
 		}		
 	}
