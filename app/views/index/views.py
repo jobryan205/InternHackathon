@@ -21,7 +21,7 @@ def generateHex():
 def do_index():
 
     if request.method == 'GET':
-        return render_template('index.html')
+        return render_template('index/index.html')
 
     if request.method == 'POST':
         hexId = generateHex()
