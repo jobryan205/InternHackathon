@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, request
 from app import app
 import random
 
@@ -25,7 +25,7 @@ def do_index():
 
     if request.method == 'POST':
         hexId = generateHex()
-        while app.mongo.db.find_one({'challengeId': hexId}):
+        while app.mongo.db.challenge.find_one({'challengeId': hexId}):
             hexId = generateHex()
 
         challengeName = request.form['challengeName']
