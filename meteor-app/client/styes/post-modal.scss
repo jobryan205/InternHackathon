@@ -1,0 +1,129 @@
+@import 'apple-vars.scss';
+
+.modal-wrapper{
+  position: fixed;
+  top: 0; left: 0;
+  height: 100%; width: 100%;
+  background-color: rgba(0,0,0,0.7);
+  z-index: 50;
+  cursor: pointer;
+  overflow: auto;
+  display: none;
+  .loader{
+    position: fixed;
+    top: 0; left: 0;
+    height: 100%; width: 100%;
+    background-color: rgba(0,0,0,1);
+    z-index: 100;
+    background-image: url('/images/loader.gif');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 36px;
+    display: none;
+  }
+  .wormhole{
+    width: 480px;
+    position: relative;
+    margin: 48px auto;
+    background-color: $COLOR-BG-DEF;
+    padding: 18px;
+    border-radius: 4px;
+    box-shadow: 0px 3px 18px -3px #111;
+    cursor: default;
+
+    span:first-of-type{
+      cursor: pointer;
+      color: red;
+      position: absolute;
+      top: 0; right: 0;
+      display: block;
+      height: 42px; width: 42px;
+      text-align: center; line-height: 42px;
+    }
+  }
+}
+
+.post-modal{
+  .wormhole{
+    h2{
+      font-size: 12px;
+      color: $COLOR-GRAY;
+      margin: 12px 5% 24px;
+      width: 90%;
+      strong{
+        font-weight: bold;
+        color: #333;
+        font-size: 18px;
+      }
+    }
+
+    img{
+      max-width: 90%;
+      display: block;
+      position: relative;
+      margin: 24px auto;
+      border-radius: 3px;
+      box-shadow: 0px 3px 12px -4px #111;
+      background-color: black;
+    }
+    input[type="text"], textarea{
+      -webkit-appearance: none;
+			height: 30px;
+			width: 90%;
+      margin: 0 auto;
+      position: relative; display: block;
+			padding-left: 9px;
+			outline: none;
+			border: 1px solid #DEDEDE;
+			background-color: #FEFEFE;
+			border-radius: 4px;
+			font-size: 13px;
+			margin-bottom: 12px;
+
+			-webkit-transition: all .4s;
+			   -moz-transition: all .4s;
+			    -ms-transition: all .4s;
+			     -o-transition: all .4s;
+			        transition: all .4s;
+			-webkit-box-sizing: border-box;
+			   -moz-box-sizing: border-box;
+			        box-sizing: border-box;
+			&:focus{
+				background-color: white;
+				border-color: $COLOR-PINK;
+			}
+    }
+    textarea{
+      padding-top: 9px;
+      height: 60px;
+    }
+    button[type='submit']{
+			height: 42px;
+			width: 90%; display: block;
+			padding-left: 9px;
+			outline: none;
+			background-color: $COLOR-PINKK;
+			color: #FEFEFE;
+			border-radius: 4px;
+			font-size: 13px;
+			margin: 12px auto;
+			border: 0;
+			cursor: pointer;
+
+			-webkit-transition: all .4s;
+			   -moz-transition: all .4s;
+			    -ms-transition: all .4s;
+			     -o-transition: all .4s;
+			        transition: all .4s;
+			-webkit-box-sizing: border-box;
+			   -moz-box-sizing: border-box;
+			        box-sizing: border-box;
+			&:active{
+				opacity: 0.6;
+			}
+			&[disabled]{
+				opacity: 0.4;
+			}
+		}
+  }
+}

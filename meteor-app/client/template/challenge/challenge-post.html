@@ -1,0 +1,21 @@
+<template name="challengePost">
+	<div class="challenge-post">
+		<hr />
+		<div class="post-info">
+			<img src="{{url}}" />
+			<div class="caption-box">
+				<strong>{{name}}</strong>
+				{{#if caption}}
+					<span>&bull;</span>
+					<p>{{{caption}}}</p>
+				{{/if}}
+			</div>
+		</div>
+		<div class="post-actions">
+			<span class="like-toggle {{isLiked}}">
+				<button></button>
+				<strong>{{likes.likeCount}}</strong>
+			</span>
+		</div>
+	</div>
+</template>

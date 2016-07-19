@@ -1,0 +1,35 @@
+<template name="challengeActionBar">
+	{{> postModal}}
+	<div class="challenge-action-bar">
+		<div class="status">
+			<input readonly type="text" value="{{urlBase}}/challenge/{{challengeId}}" />
+			<h1><span>Challenge:</span> &ldquo; {{challenge.name}} &rdquo;</h1>
+			<table>
+				{{#if countDown}}
+					<th>
+						<td>HR</td>
+						<td>MIN</td>
+						<td>SEC</td>
+					</th>
+					<tr>
+						<td>{{countDown.hours}}</td>
+						<td>{{countDown.minutes}}</td>
+						<td>{{countDown.seconds}}</td>
+					</tr>
+				{{else}}
+					<th></th>
+					<tr>
+						<td class="ended-challenge">&mdash; &mdash;</td>
+					</tr>
+				{{/if}}
+			</table>
+		</div>
+		{{#if countDown}}
+			<button class="upload-image" title="Upload an image to the challenge">
+					<input accept="image/*" type="file" name="imageUpload" id="imageUpload" />
+			</button>
+		{{else}}
+			<button title="Create a new challenge" class="create-new-challenge">new +</button>
+		{{/if}}
+	</div>
+</template>

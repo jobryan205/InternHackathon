@@ -1,0 +1,30 @@
+<head>
+	<link rel="icon" type="image/png" href="/favicon.ico?v=2" />
+</head>
+<template name="landing">
+	<div class="landing-wrapper">
+		<div class="welcome">
+			<h1>face<span>|</span>off</h1>
+			<img src="/images/emojis.jpg" alt=":)">
+			<strong class="motto">ready. set. face off.</strong>
+		</div>
+		<hr />
+		<form role="form" action="/challenge/asdf" method="POST" name="createChallenge" class="create-challenge">
+			<label for="challenge-name">Challenge Name:</label>
+			<input type="text" id="challenge-name" placeholder="Ex. Best duck face" required />
+			<label for="timer">Time:</label>
+			<select name="times" id="timer">
+				<option value=".25">15 minutes</option>
+				<option value=".5">30 minutes</option>
+				<option value="1">1 hour</option>
+				<option value="2">2 hours</option>
+				<option value="5">5 hours</option>
+				<option value="12">12 hours</option>
+				<option value="24">24 hours</option>
+			</select>
+
+			<button type="submit" id="submitBtn" class="submit-btn">Submit</button>
+		</form>
+	</div>
+	<div class="landing-bg"></div>
+</template>

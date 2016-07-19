@@ -1,0 +1,26 @@
+<template name="challenge">
+	<div class="challenge-page">
+		<div class="upper-half">
+			<header class="side-rail">
+				<h2>face <span>|</span> off</h2>
+				<img src="/images/emojis.jpg" />
+			</header>
+			<main class="feed">
+				{{#unless sessionEnd}}
+					{{#if topPosterName}}
+						<h1>Top post by <strong>{{topPosterName}}</strong></h1>
+					{{/if}}
+				{{/unless}}
+				{{#if posts}}
+					{{#each posts}}
+						{{> challengePost}}
+					{{/each}}
+				{{else}}
+					<h2>Post a picture to get things rolling.</h2>
+				{{/if}}
+			</main>
+			<div class="empty-rail"></div>
+		</div>
+		{{> challengeActionBar challenge=challenge countDown=sessionEnd urlBase=urlBase challengeId=challengeId}}
+	</div>
+</template>

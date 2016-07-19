@@ -1,0 +1,18 @@
+<template name="postModal">
+  <div class="modal-wrapper post-modal">
+		<div class="loader"></div>
+		<div class="wormhole">
+			<span>&times;</span>
+			<h2>New post | <strong>&ldquo; {{challenge.name}} &rdquo;</strong></h2>
+			<div id="imageInjectionPoint">
+        <!-- <img src="{{previewUrl}}" alt="uploaded image preview" /> -->
+      </div>
+			<form accept-charset="utf-8" name="makePost" method="POST" action="">
+				<input type="text" value="{{mountedPost.url}}" style="display:none;" required />
+				<input type="text" placeholder="Your name" name="name" id="postName" required />
+				<textarea name="postCaption" id="postCaption" placeholder="Caption..."></textarea>
+				<button type="submit" id="makePostSubmit">Post</button>
+			</form>
+		</div>
+	</div>
+</template>
