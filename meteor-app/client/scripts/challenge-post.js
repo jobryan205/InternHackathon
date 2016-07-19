@@ -4,6 +4,12 @@ Template.challengePost.events({
     if (Session.get('userId') === template.data.authorId) {
       return alert('You can\'t like your own post!');
     } else {
+      var challenge = Challenges.findOne({"challengeId": Router.current().params.challengeId})
+      if (challenge) {
+        if (challenge.endTime.getTime() < new Date().getTime()) {
+          return;
+        }
+      }
       var wasLiked = template.data.likes[Session.get('userId')];
       var query = {
         targetLiked: !wasLiked,
